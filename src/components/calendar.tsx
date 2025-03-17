@@ -7,8 +7,6 @@ import { Card } from "@/components/ui/card"
 import { AddReminderDialog } from "@/components/add-reminder-dialog"
 import { ReminderItem } from "@/components/reminder-item"
 import { useReminders } from "@/hooks/use-reminders"
-import tailwind from "tailwindcss"
-import Image from "next/image"
 
 export function Calendar() {
     const [currentDate, setCurrentDate] = useState(new Date())
