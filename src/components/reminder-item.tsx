@@ -21,9 +21,12 @@ export function ReminderItem({ reminder, onDelete }: ReminderItemProps) {
     <div className="p-3 border rounded-md bg-card hover:bg-accent/50 transition-colors">
       <div className="flex justify-between items-start">
         <div>
-          <h4 className="font-medium flex items-center gap-2">
+        <h4 className="font-medium flex items-center gap-2">
             {reminder.title}
-            {reminder.priority && <CardPriority priority={reminder.priority} />}
+            {reminder.priority && 
+              <CardPriority priority={(typeof reminder.priority === "number" ?
+                (reminder.priority === 1 ? "Low" : reminder.priority === 2 ? "Medium" : "High") :
+                reminder.priority) as "Low" | "Medium" | "High"} />}
           </h4>
           <div className="text-sm text-muted-foreground flex items-center mt-1">
             <span>
